@@ -1,0 +1,15 @@
+[Unit]
+Description=apagon - bot de Telegram (comandos y suscripciones)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=apagon
+WorkingDirectory=/opt/apagon
+ExecStart=/opt/apagon/.venv/bin/python -m apagon bot
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

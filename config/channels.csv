@@ -1,0 +1,4 @@
+# Canales/grupos PÚBLICOS de Telegram a escuchar.
+# channel: username sin '@'. default_region: código de estado si el canal es regional (vacío si es nacional).
+# Los mensajes que no mencionan un lugar heredan default_region.
+channel,default_region

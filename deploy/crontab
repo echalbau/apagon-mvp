@@ -1,0 +1,22 @@
+# Crontab del usuario 'apagon'. Instalar con: crontab deploy/crontab
+# Monitoreo opcional (healthchecks.io, gratis): añade al final de una línea
+#   && curl -fsS -m 10 https://hc-ping.com/TU-UUID > /dev/null
+# y te avisará por correo si ese job deja de correr.
+SHELL=/bin/bash
+APP=/opt/apagon
+PY=/opt/apagon/.venv/bin/python
+
+# Etiquetas incrementales + detección inmediata, cada 15 min
+*/15 * * * * cd $APP && ($PY -m apagon aggregate && $PY -m apagon detect) >> data/cron.log 2>&1
+
+# Clima, cada hora
+5 * * * *    cd $APP && $PY -m apagon weather >> data/cron.log 2>&1
+
+# Pronóstico + alertas, cada hora (después del clima)
+10 * * * *   cd $APP && $PY -m apagon predict >> data/cron.log 2>&1
+
+# Reentrenamiento semanal (lunes 03:00 UTC)
+0 3 * * 1    cd $APP && ($PY -m apagon aggregate --full && $PY -m apagon train) >> data/cron.log 2>&1
+
+# Backup diario de la base (conserva 14 días)
+30 4 * * *   cd $APP && sqlite3 data/apagon.db ".backup backups/apagon-$(date +\%F).db" && find backups -name 'apagon-*.db' -mtime +14 -delete

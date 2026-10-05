@@ -1,0 +1,15 @@
+[Unit]
+Description=apagon - escucha de canales de Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=apagon
+WorkingDirectory=/opt/apagon
+ExecStart=/opt/apagon/.venv/bin/python -m apagon listen
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

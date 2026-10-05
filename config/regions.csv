@@ -1,0 +1,26 @@
+region_id,name,lat,lon,kind
+AMA,Amazonas,5.6639,-67.6236,state
+ANZ,Anzoátegui,10.1360,-64.6862,state
+APU,Apure,7.8878,-67.4724,state
+ARA,Aragua,10.2469,-67.5958,state
+BAR,Barinas,8.6226,-70.2075,state
+BOL,Bolívar,8.1222,-63.5497,state
+CAR,Carabobo,10.1620,-68.0077,state
+COJ,Cojedes,9.6612,-68.5827,state
+DAM,Delta Amacuro,9.0581,-62.0497,state
+DC,Distrito Capital,10.4806,-66.9036,state
+FAL,Falcón,11.4045,-69.6734,state
+GUA,Guárico,9.9114,-67.3538,state
+LAR,Lara,10.0678,-69.3474,state
+LGU,La Guaira,10.6012,-66.9330,state
+MER,Mérida,8.5897,-71.1561,state
+MIR,Miranda,10.3420,-67.0413,state
+MON,Monagas,9.7457,-63.1832,state
+NES,Nueva Esparta,11.0290,-63.8620,state
+POR,Portuguesa,9.0418,-69.7421,state
+SUC,Sucre,10.4532,-64.1826,state
+TAC,Táchira,7.7669,-72.2250,state
+TRU,Trujillo,9.3666,-70.4366,state
+YAR,Yaracuy,10.3399,-68.7425,state
+ZUL,Zulia,10.6545,-71.6406,state
+GURI,Embalse de Guri (cuenca del Caroní),7.7650,-62.9900,hydro
