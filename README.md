@@ -107,18 +107,6 @@ Comandos del bot: `/regiones`, `/suscribir ZUL [umbral]`, `/desuscribir ZUL|toda
 - **Sin X/Twitter**: el tier gratuito de su API no permite lectura útil y el scraping viola sus términos.
 - **Open-Meteo** es gratis para uso no comercial; si el proyecto se monetiza, necesitas su plan de pago.
 
-## Cómo mejorarlo (en orden de impacto)
-
-1. **Validar etiquetas con IODA** (caídas de conectividad a internet por estado, Georgia Tech, gratis): mide cuánto coinciden con `region_hour` y úsalo como feature o como etiqueta alternativa.
-2. **Clasificador entrenado**: etiqueta a mano 1–2 mil mensajes de `social_reports` y entrena un TF-IDF + regresión logística; sube `PARSER_VERSION` y corre `reprocess`.
-3. **Planes de racionamiento publicados** por gobernaciones o la empresa eléctrica: cuando existen, son la feature más fuerte para el corto plazo.
-4. **Granularidad municipal** en el gazetteer y en las suscripciones.
-5. **Calibración** (isotónica) si el Brier se degrada, y umbrales por estado.
-6. **Postgres** solo cuando SQLite se quede corto (varios escritores o >10 M mensajes).
-
-## Privacidad
-
-Los autores se guardan como `sha256(sal:id)[:16]`; nunca el ID ni el username. No compartas la sal. Lee solo canales públicos y mantén tasas de lectura moderadas para no arriesgar la cuenta de Telegram. Las alertas indican que son estimaciones, no avisos oficiales.
 
 ## Estructura
 
